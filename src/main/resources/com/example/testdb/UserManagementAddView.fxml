@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane prefHeight="570.0" prefWidth="406.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.testdb.UserManagementAddViewController">
+   <children>
+      <VBox prefHeight="78.0" prefWidth="400.0">
+         <children>
+            <Label alignment="CENTER" prefHeight="83.0" prefWidth="400.0" text="Add User Account">
+               <font>
+                  <Font name="System Bold" size="24.0" />
+               </font>
+            </Label>
+         </children>
+      </VBox>
+      <GridPane layoutY="78.0" prefHeight="281.0" prefWidth="400.0">
+        <columnConstraints>
+          <ColumnConstraints halignment="RIGHT" hgrow="ALWAYS" maxWidth="194.4000244140625" minWidth="10.0" prefWidth="111.2" />
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="310.39996337890625" minWidth="10.0" prefWidth="289.6" />
+        </columnConstraints>
+        <rowConstraints>
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <Label alignment="CENTER_RIGHT" prefHeight="18.0" prefWidth="97.0" text="First Name:" GridPane.rowIndex="1" />
+            <Label alignment="CENTER_RIGHT" layoutX="10.0" layoutY="21.0" prefHeight="18.0" prefWidth="97.0" text="Middle Name:" GridPane.rowIndex="2" />
+            <Label alignment="CENTER_RIGHT" layoutX="10.0" layoutY="61.0" prefHeight="18.0" prefWidth="97.0" text="Last Name:" GridPane.rowIndex="3" />
+            <Label alignment="CENTER_RIGHT" layoutX="10.0" layoutY="102.0" prefHeight="18.0" prefWidth="97.0" text="Birthdate:" GridPane.rowIndex="4" />
+            <Label alignment="CENTER_RIGHT" layoutX="10.0" layoutY="142.0" prefHeight="18.0" prefWidth="97.0" text="Gender:" GridPane.rowIndex="5" />
+            <Label alignment="CENTER_RIGHT" layoutX="10.0" layoutY="183.0" prefHeight="18.0" prefWidth="97.0" text="Status:" GridPane.rowIndex="6" />
+            <Label alignment="CENTER_RIGHT" layoutX="10.0" layoutY="56.0" prefHeight="18.0" prefWidth="98.0" text="User ID:" />
+            <TextField fx:id="txtfieldUserID" disable="true" editable="false" GridPane.columnIndex="1">
+               <cursor>
+                  <Cursor fx:constant="NONE" />
+               </cursor>
+            </TextField>
+            <TextField fx:id="txtfieldFirstname" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <TextField fx:id="txtfieldMiddlename" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+            <TextField fx:id="txtfieldLastname" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+            <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="5">
+               <children>
+                  <RadioButton fx:id="radiobtnMale" mnemonicParsing="false" text="Male">
+                     <HBox.margin>
+                        <Insets left="10.0" right="5.0" />
+                     </HBox.margin>
+                     <toggleGroup>
+                        <ToggleGroup fx:id="togglegroupGender" />
+                     </toggleGroup>
+                  </RadioButton>
+                  <RadioButton fx:id="radiobtnFemale" mnemonicParsing="false" prefHeight="18.0" prefWidth="63.0" text="Female" toggleGroup="$togglegroupGender">
+                     <HBox.margin>
+                        <Insets left="5.0" />
+                     </HBox.margin>
+                  </RadioButton>
+               </children>
+            </HBox>
+            <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="6">
+               <children>
+                  <CheckBox fx:id="checkboxIsActive" mnemonicParsing="false" selected="true" text="Active">
+                     <HBox.margin>
+                        <Insets left="10.0" />
+                     </HBox.margin>
+                  </CheckBox>
+               </children>
+            </HBox>
+            <DatePicker fx:id="datepickerBirthdate" promptText="Enter Birthdate" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+         </children>
+      </GridPane>
+      <VBox layoutY="360.0" prefHeight="47.0" prefWidth="406.0">
+         <children>
+            <Label alignment="CENTER" prefHeight="50.0" prefWidth="406.0" text="Create Username and Password">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+         </children>
+      </VBox>
+      <GridPane layoutY="405.0" prefHeight="90.0" prefWidth="400.0">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="198.20001220703125" minWidth="10.0" prefWidth="111.2" />
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="311.99998779296874" minWidth="10.0" prefWidth="295.2" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints maxHeight="45.5999755859375" minHeight="10.0" prefHeight="29.000012207031247" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="43.9999755859375" minHeight="10.0" prefHeight="32.79996337890625" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="43.9999755859375" minHeight="10.0" prefHeight="29.60003662109375" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <Label alignment="CENTER_RIGHT" prefHeight="18.0" prefWidth="110.0" text="Username:" />
+            <Label alignment="CENTER_RIGHT" prefHeight="18.0" prefWidth="113.0" text="Password:" GridPane.rowIndex="1" />
+            <Label alignment="CENTER_RIGHT" layoutX="10.0" layoutY="40.0" prefHeight="18.0" prefWidth="114.0" text="Confirm Password:" GridPane.rowIndex="2" />
+            <TextField fx:id="textfieldUsername" GridPane.columnIndex="1" />
+            <PasswordField fx:id="txtfieldPassword" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <PasswordField fx:id="txtfieldConfirmPassword" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+         </children>
+      </GridPane>
+      <HBox alignment="CENTER_RIGHT" layoutX="1.0" layoutY="495.0" prefHeight="72.0" prefWidth="400.0">
+         <children>
+            <Button fx:id="btnSave" mnemonicParsing="false" onAction="#onClickSave" prefWidth="50.0" text="Save">
+               <HBox.margin>
+                  <Insets right="2.5" />
+               </HBox.margin>
+            </Button>
+            <Button fx:id="btnClear" mnemonicParsing="false" onAction="#onClickClear" prefWidth="50.0" text="Clear">
+               <HBox.margin>
+                  <Insets left="2.5" right="2.5" />
+               </HBox.margin>
+            </Button>
+            <Button fx:id="btnExit" mnemonicParsing="false" onAction="#onClickExit" prefWidth="50.0" text="Exit">
+               <HBox.margin>
+                  <Insets left="2.5" right="2.5" />
+               </HBox.margin>
+            </Button>
+         </children>
+      </HBox>
+   </children>
+</AnchorPane>

@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="916.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.testdb.LibraryStaffListViewController">
+   <children>
+      <VBox prefHeight="400.0" prefWidth="916.0">
+         <children>
+            <HBox alignment="CENTER_RIGHT" prefHeight="26.0" prefWidth="862.0" spacing="200.0">
+               <children>
+                  <Label prefHeight="31.0" prefWidth="235.0" text="Library Staff List View">
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                     <padding>
+                        <Insets left="5.0" />
+                     </padding>
+                  </Label>
+                  <GridPane>
+                     <columnConstraints>
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" />
+                     </columnConstraints>
+                     <rowConstraints>
+                        <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+                     </rowConstraints>
+                     <children>
+                        <TextField fx:id="txtfieldSearch" onKeyPressed="#onKeyPressed" prefHeight="26.0" prefWidth="406.0" promptText="Search Staff" />
+                        <Button fx:id="btnSearch" mnemonicParsing="false" onAction="#onClickSearch" onKeyPressed="#onKeyPressed" prefHeight="26.0" prefWidth="63.0" text="Search" GridPane.columnIndex="1" />
+                     </children>
+                  </GridPane>
+               </children>
+               <padding>
+                  <Insets bottom="10.0" />
+               </padding>
+               <VBox.margin>
+                  <Insets right="10.0" top="10.0" />
+               </VBox.margin>
+            </HBox>
+            <TableView fx:id="tblLibraryStaffList" prefHeight="298.0" prefWidth="903.0">
+               <columns>
+                  <TableColumn fx:id="colStaffID" prefWidth="55.19998207092286" text="Staff ID" />
+                  <TableColumn fx:id="colStaffName" prefWidth="244.00003051757812" text="Name" />
+                  <TableColumn fx:id="colEmail" prefWidth="200.79998779296875" text="Email" />
+                  <TableColumn fx:id="colRole" prefWidth="110.4000244140625" text="Role" />
+                  <TableColumn fx:id="colContactno" prefWidth="161.60003662109375" text="Contact No" />
+                  <TableColumn fx:id="colSection" prefWidth="121.60009765625" text="Section" />
+               </columns>
+               <padding>
+                  <Insets right="10.0" />
+               </padding>
+            </TableView>
+            <HBox alignment="CENTER_RIGHT" prefHeight="46.0" prefWidth="480.0">
+               <children>
+                  <Button fx:id="btnNew" mnemonicParsing="false" onAction="#onClickNew" prefHeight="26.0" prefWidth="51.0" text="New" />
+                  <Button fx:id="btnEdit" mnemonicParsing="false" onAction="#onClickEdit" prefHeight="26.0" prefWidth="46.0" text="Edit" />
+                  <Button fx:id="btnClose" mnemonicParsing="false" onAction="#onClickClose" prefHeight="26.0" prefWidth="56.0" text="Close" />
+               </children>
+               <VBox.margin>
+                  <Insets right="10.0" />
+               </VBox.margin>
+            </HBox>
+         </children>
+         <padding>
+            <Insets left="10.0" />
+         </padding>
+      </VBox>
+   </children>
+</AnchorPane>
