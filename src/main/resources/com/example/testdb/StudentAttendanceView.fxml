@@ -14,7 +14,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="357.0" prefWidth="402.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.testdb.StudentListController">
+<AnchorPane prefHeight="357.0" prefWidth="402.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.testdb.StudentAttendanceViewController">
    <children>
       <GridPane layoutX="14.0" layoutY="54.0" prefHeight="266.0" prefWidth="374.0">
         <columnConstraints>
