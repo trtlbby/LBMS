@@ -10,7 +10,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-public class StudentListController {
+public class StudentAttendanceViewController {
 
     public TextField txtfieldStudentID;
     public TextField txtfieldName;
