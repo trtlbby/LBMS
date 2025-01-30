@@ -26,7 +26,7 @@ public class DashboardViewController {
     }
 
     public void onClickStudent(ActionEvent actionEvent) throws IOException {
-        utils.currentStage(actionEvent, "StudentAttendanceView", "Student Attendance");
+        utils.currentStage(actionEvent, "StudentListView", "Student List");
     }
 
     public void onClickUserManagement(ActionEvent actionEvent) throws IOException {
