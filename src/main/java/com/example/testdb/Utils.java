@@ -6,6 +6,7 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
+import javafx.scene.control.Button;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 
@@ -42,6 +43,11 @@ public class Utils {
         stage.initOwner(((Node)actionEvent.getSource()).getScene().getWindow());
 
         stage.showAndWait();
+    }
+
+    public void closeStage(Button btn){
+        Stage stage = (Stage) btn.getScene().getWindow();
+        stage.close();
     }
 
 }
