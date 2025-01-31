@@ -6,6 +6,7 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.Tab;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -19,6 +20,8 @@ public class DashboardViewController {
     public Button btnLibraryCard;
     public Button btnCollegeList;
     public Button btnLibraryStaff;
+    public Tab tabStatistic;
+    public Tab tabMenu;
     Utils utils;
 
     public void initialize(){
