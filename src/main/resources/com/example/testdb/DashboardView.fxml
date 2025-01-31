@@ -14,7 +14,7 @@
 
 <TabPane prefHeight="616.0" prefWidth="822.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.testdb.DashboardViewController">
    <tabs>
-      <Tab closable="false" text="MENU">
+      <Tab fx:id="tabMenu" closable="false" text="MENU">
          <content>
             <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0">
                <center>
@@ -68,7 +68,7 @@
             </BorderPane>
          </content>
       </Tab>
-      <Tab closable="false" text="Statistics">
+      <Tab fx:id="tabStatistic" closable="false" text="Statistics">
         <content>
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
         </content>
