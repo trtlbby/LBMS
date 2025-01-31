@@ -2,10 +2,11 @@
 
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
-<?import javafx.scene.control.CheckBox?>
 <?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
@@ -60,14 +61,18 @@
                   <RowConstraints maxHeight="34.400000000000006" minHeight="10.0" prefHeight="24.800006103515628" vgrow="SOMETIMES" />
                </rowConstraints>
                <children>
-                  <CheckBox fx:id="checkStudy" mnemonicParsing="false" selected="true" text="Study" />
-                  <CheckBox fx:id="checkMeeting" layoutX="10.0" layoutY="14.0" mnemonicParsing="false" text="Meeting" GridPane.columnIndex="1" />
-                  <CheckBox fx:id="checkLeisure" layoutX="92.0" layoutY="14.0" mnemonicParsing="false" text="Leisure(Tambay)" GridPane.rowIndex="1" />
-                  <CheckBox fx:id="checkResearch" layoutX="10.0" layoutY="37.0" mnemonicParsing="false" text="Research" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-                  <CheckBox fx:id="checkNapping" layoutX="92.0" layoutY="37.0" mnemonicParsing="false" text="Napping" GridPane.rowIndex="2" />
-                  <CheckBox fx:id="checkInternet" layoutX="200.0" layoutY="14.0" mnemonicParsing="false" text="For Internet" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-                  <CheckBox fx:id="checkBorrowBook" layoutX="10.0" layoutY="67.0" mnemonicParsing="false" text="Borrowing books" GridPane.rowIndex="3" />
-                  <CheckBox fx:id="checkGroupwork" layoutX="10.0" layoutY="75.0" mnemonicParsing="false" text="Group works" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                  <RadioButton fx:id="radiobtnStudy" mnemonicParsing="false" selected="true" text="To study">
+                     <toggleGroup>
+                        <ToggleGroup fx:id="radioPurpose" />
+                     </toggleGroup>
+                  </RadioButton>
+                  <RadioButton fx:id="radiobtnCollab" layoutX="10.0" layoutY="13.0" mnemonicParsing="false" text="Collaboration room" toggleGroup="$radioPurpose" GridPane.rowIndex="1" />
+                  <RadioButton fx:id="radiobtnBorrow" layoutX="10.0" layoutY="64.0" mnemonicParsing="false" text="To borrow books" toggleGroup="$radioPurpose" GridPane.rowIndex="3" />
+                  <RadioButton fx:id="radiobtnMeeting" layoutX="10.0" layoutY="13.0" mnemonicParsing="false" text="Meeting" toggleGroup="$radioPurpose" GridPane.columnIndex="1" />
+                  <RadioButton fx:id="radiobtnResearch" layoutX="10.0" layoutY="39.0" mnemonicParsing="false" text="For Research" toggleGroup="$radioPurpose" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                  <RadioButton fx:id="radiobtnInternet" layoutX="149.0" layoutY="13.0" mnemonicParsing="false" text="For Internet" toggleGroup="$radioPurpose" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                  <RadioButton fx:id="radiobtnGroupwork" layoutX="149.0" layoutY="64.0" mnemonicParsing="false" text="Group works" toggleGroup="$radioPurpose" GridPane.rowIndex="2" />
+                  <RadioButton fx:id="radiobtnOthers" mnemonicParsing="false" text="Others" toggleGroup="$radioPurpose" GridPane.columnIndex="1" GridPane.rowIndex="3" />
                </children>
             </GridPane>
             <Label alignment="CENTER_RIGHT" layoutX="10.0" layoutY="158.0" prefHeight="22.0" prefWidth="202.0" text="Others" GridPane.rowIndex="4">
@@ -89,8 +94,8 @@
       </VBox>
       <HBox alignment="CENTER_RIGHT" layoutY="314.0" prefHeight="38.0" prefWidth="402.0" spacing="5.0">
          <children>
-            <Button defaultButton="true" mnemonicParsing="false" text="Save" />
-            <Button cancelButton="true" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" text="Close" />
+            <Button fx:id="btnSave" defaultButton="true" mnemonicParsing="false" onAction="#onClickSave" text="Save" />
+            <Button fx:id="btnClose" cancelButton="true" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#onClickClose" text="Close" />
          </children>
          <padding>
             <Insets right="5.0" />

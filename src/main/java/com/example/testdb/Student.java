@@ -1,21 +1,21 @@
 package com.example.testdb;
 
 public class Student {
-    private String student_ID, name, purpose, college_ID;
+    private String stud_num, name, purpose, college_ID;
 
     public Student(String student_ID, String name, String purpose, String college_ID){
-        this.student_ID = student_ID;
+        this.stud_num = student_ID;
         this.name = name;
         this.purpose = purpose;
         this.college_ID = college_ID;
     }
 
-    public String getStudent_ID() {
-        return student_ID;
+    public String getStud_num() {
+        return stud_num;
     }
 
-    public void setStudent_ID(String student_ID) {
-        this.student_ID = student_ID;
+    public void setStud_num(String stud_num) {
+        this.stud_num = stud_num;
     }
 
     public String getName() {

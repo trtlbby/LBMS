@@ -1,9 +1,7 @@
 package com.example.testdb;
 
-import javafx.scene.control.Alert;
-import javafx.scene.control.CheckBox;
-import javafx.scene.control.ComboBox;
-import javafx.scene.control.TextField;
+import javafx.event.ActionEvent;
+import javafx.scene.control.*;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -15,17 +13,22 @@ public class StudentAttendanceViewController {
     public TextField txtfieldStudentID;
     public TextField txtfieldName;
     public ComboBox<String> comboCollege;
-    public CheckBox checkStudy;
-    public CheckBox checkMeeting;
-    public CheckBox checkLeisure;
-    public CheckBox checkResearch;
-    public CheckBox checkNapping;
-    public CheckBox checkInternet;
-    public CheckBox checkBorrowBook;
-    public CheckBox checkGroupwork;
     public TextField txtfieldOthers;
+    public Button btnSave;
+    public Button btnClose;
+    public Utils utils;
+    public ToggleGroup radioPurpose;
+    public RadioButton radiobtnStudy;
+    public RadioButton radiobtnCollab;
+    public RadioButton radiobtnBorrow;
+    public RadioButton radiobtnMeeting;
+    public RadioButton radiobtnResearch;
+    public RadioButton radiobtnInternet;
+    public RadioButton radiobtnGroupwork;
+    public RadioButton radiobtnOthers;
 
     public void initialize(){
+        utils = new Utils();
         populateComboBox();
     }
     public void populateComboBox(){
@@ -48,7 +51,37 @@ public class StudentAttendanceViewController {
             alert.showAndWait();
         }
     }
-    private void populateStudentList(){
 
+
+    public void onClickSave(ActionEvent actionEvent) {
+        String selectedCollege = comboCollege.getSelectionModel().getSelectedItem();
+        String college_ID = selectedCollege.substring(0, selectedCollege.indexOf("-"));
+        Student student = new Student(txtfieldStudentID.getText().trim(),
+                txtfieldName.getText().trim(),
+                ((RadioButton)radioPurpose.getSelectedToggle()).getText().trim(),
+                college_ID);
+        try {
+            Connection CONN = JDBCConnector.connection();
+            String sql = "INSERT INTO student_attendance (stud_num, name, purpose, college_ID) " +
+                    "VALUES (?,?,?,?)";
+            PreparedStatement ps = CONN.prepareStatement(sql);
+            ps.setString(1, student.getStud_num());
+            ps.setString(2, student.getName());
+            ps.setString(3, student.getPurpose());
+            ps.setString(4, student.getCollege_ID());
+            ps.executeUpdate();
+
+            Utils.alertHandler(Alert.AlertType.CONFIRMATION, "Added Successfully");
+        } catch (SQLException e) {
+            Utils.alertHandler(Alert.AlertType.ERROR, "Error: "+ e);
+        }
+    }
+
+
+
+
+
+    public void onClickClose(ActionEvent actionEvent) {
+        utils.closeStage(btnClose);
     }
 }

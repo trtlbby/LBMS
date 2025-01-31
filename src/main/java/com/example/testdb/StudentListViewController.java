@@ -1,11 +1,16 @@
 package com.example.testdb;
 
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
-import javafx.scene.control.Button;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
+import javafx.scene.control.*;
+import javafx.scene.control.cell.PropertyValueFactory;
 
 import java.io.IOException;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 
 public class StudentListViewController {
     public TableView<Student> tblStudentList;
@@ -17,16 +22,45 @@ public class StudentListViewController {
     public Button btnAdd;
     public Button btnBack;
     public Utils utils;
+    public TextField txtfieldSearch;
+    public Button btnSearch;
 
     public void initialize() {
         //TO-DO
         utils = new Utils();
+        populateStudentList();
     }
 
     public void populateStudentList() {
         tblStudentList.getColumns().clear();
         tblStudentList.getItems().clear();
 
+        try {
+            ObservableList<Student> studentObservableList = FXCollections.observableArrayList();
+            Connection CONN = JDBCConnector.connection();
+            String sql = "SELECT * FROM student_attendance";
+            PreparedStatement preparedStatement = CONN.prepareStatement(sql);
+            ResultSet rs = preparedStatement.executeQuery();
+
+            while (rs.next()) {
+                Student student = new Student(rs.getString("stud_num"),
+                        rs.getString("name"),
+                        rs.getString("purpose"),
+                        rs.getString("college_ID"));
+                studentObservableList.add(student);
+            }
+
+            colID.setCellValueFactory(new PropertyValueFactory<>("stud_num"));
+            colName.setCellValueFactory(new PropertyValueFactory<>("name"));
+            colPurpose.setCellValueFactory(new PropertyValueFactory<>("purpose"));
+            colCollege.setCellValueFactory(new PropertyValueFactory<>("college_ID"));
+
+            tblStudentList.getColumns().addAll(colID, colName, colPurpose, colCollege);
+            tblStudentList.setItems(studentObservableList);
+
+        } catch (SQLException e) {
+            Utils.alertHandler(Alert.AlertType.ERROR, "Error in" + e);
+        }
     }
 
 
@@ -35,9 +69,13 @@ public class StudentListViewController {
 
     public void onClickAdd(ActionEvent actionEvent) throws IOException {
         utils.modalStage(actionEvent, "StudentAttendanceView", "Student Attendance");
+        this.populateStudentList();
     }
 
-    public void onClickBack(ActionEvent actionEvent) {
-        utils.closeStage(btnBack);
+    public void onClickBack(ActionEvent actionEvent) throws IOException {
+        utils.currentStage(actionEvent, "DashboardView", "Dashboard");
+    }
+
+    public void onClickSearch(ActionEvent actionEvent) {
     }
 }
