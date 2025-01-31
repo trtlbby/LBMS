@@ -3,10 +3,7 @@ package com.example.testdb;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
-import javafx.scene.control.Alert;
-import javafx.scene.control.Button;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
+import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 
 import java.io.IOException;
@@ -25,6 +22,8 @@ public class StudentListViewController {
     public Button btnAdd;
     public Button btnBack;
     public Utils utils;
+    public TextField txtfieldSearch;
+    public Button btnSearch;
 
     public void initialize() {
         //TO-DO
@@ -70,9 +69,13 @@ public class StudentListViewController {
 
     public void onClickAdd(ActionEvent actionEvent) throws IOException {
         utils.modalStage(actionEvent, "StudentAttendanceView", "Student Attendance");
+        this.populateStudentList();
     }
 
-    public void onClickBack(ActionEvent actionEvent) {
-        utils.closeStage(btnBack);
+    public void onClickBack(ActionEvent actionEvent) throws IOException {
+        utils.currentStage(actionEvent, "DashboardView", "Dashboard");
+    }
+
+    public void onClickSearch(ActionEvent actionEvent) {
     }
 }
