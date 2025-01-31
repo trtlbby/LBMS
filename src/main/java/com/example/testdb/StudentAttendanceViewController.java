@@ -48,7 +48,4 @@ public class StudentAttendanceViewController {
             alert.showAndWait();
         }
     }
-    private void populateStudentList(){
-
-    }
 }
