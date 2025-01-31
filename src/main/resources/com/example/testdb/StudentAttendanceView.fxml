@@ -15,7 +15,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="357.0" prefWidth="402.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.testdb.StudentAttendanceViewController">
+<AnchorPane focusTraversable="true" prefHeight="357.0" prefWidth="402.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.testdb.StudentAttendanceViewController">
    <children>
       <GridPane layoutX="14.0" layoutY="54.0" prefHeight="266.0" prefWidth="374.0">
         <columnConstraints>
@@ -48,7 +48,7 @@
                </padding></Label>
             <TextField fx:id="txtfieldStudentID" prefHeight="26.0" prefWidth="288.0" promptText="Required" GridPane.columnIndex="1" />
             <TextField fx:id="txtfieldName" layoutX="116.0" layoutY="20.0" promptText="(optional)" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-            <ComboBox fx:id="comboCollege" layoutX="116.0" layoutY="156.0" prefHeight="26.0" prefWidth="310.0" promptText="College" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+            <ComboBox fx:id="comboCollege" layoutX="116.0" layoutY="156.0" prefHeight="26.0" prefWidth="310.0" promptText="Your Department" GridPane.columnIndex="1" GridPane.rowIndex="2" />
             <GridPane prefHeight="86.0" prefWidth="282.0" GridPane.columnIndex="1" GridPane.rowIndex="3">
                <columnConstraints>
                   <ColumnConstraints hgrow="SOMETIMES" maxWidth="183.19998474121093" minWidth="10.0" prefWidth="136.0000030517578" />
@@ -67,11 +67,11 @@
                      </toggleGroup>
                   </RadioButton>
                   <RadioButton fx:id="radiobtnCollab" layoutX="10.0" layoutY="13.0" mnemonicParsing="false" text="Collaboration room" toggleGroup="$radioPurpose" GridPane.rowIndex="1" />
+                  <RadioButton fx:id="radiobtnGroupwork" layoutX="149.0" layoutY="64.0" mnemonicParsing="false" text="Group works" toggleGroup="$radioPurpose" GridPane.rowIndex="2" />
                   <RadioButton fx:id="radiobtnBorrow" layoutX="10.0" layoutY="64.0" mnemonicParsing="false" text="To borrow books" toggleGroup="$radioPurpose" GridPane.rowIndex="3" />
                   <RadioButton fx:id="radiobtnMeeting" layoutX="10.0" layoutY="13.0" mnemonicParsing="false" text="Meeting" toggleGroup="$radioPurpose" GridPane.columnIndex="1" />
                   <RadioButton fx:id="radiobtnResearch" layoutX="10.0" layoutY="39.0" mnemonicParsing="false" text="For Research" toggleGroup="$radioPurpose" GridPane.columnIndex="1" GridPane.rowIndex="1" />
                   <RadioButton fx:id="radiobtnInternet" layoutX="149.0" layoutY="13.0" mnemonicParsing="false" text="For Internet" toggleGroup="$radioPurpose" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-                  <RadioButton fx:id="radiobtnGroupwork" layoutX="149.0" layoutY="64.0" mnemonicParsing="false" text="Group works" toggleGroup="$radioPurpose" GridPane.rowIndex="2" />
                   <RadioButton fx:id="radiobtnOthers" mnemonicParsing="false" text="Others" toggleGroup="$radioPurpose" GridPane.columnIndex="1" GridPane.rowIndex="3" />
                </children>
             </GridPane>
@@ -80,7 +80,7 @@
                   <Insets right="2.5" />
                </padding>
             </Label>
-            <TextField fx:id="txtfieldOthers" layoutX="102.0" layoutY="20.0" prefHeight="26.0" prefWidth="288.0" promptText="Purpose for visit" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+            <TextField fx:id="txtfieldOthers" editable="false" focusTraversable="false" layoutX="102.0" layoutY="20.0" prefHeight="26.0" prefWidth="288.0" promptText="Purpose for visit" GridPane.columnIndex="1" GridPane.rowIndex="4" />
          </children>
       </GridPane>
       <VBox>

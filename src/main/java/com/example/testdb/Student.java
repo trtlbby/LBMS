@@ -1,4 +1,7 @@
 package com.example.testdb;
+/**
+ * @Author: Earl Lawrence P. Bacsain
+ **/
 
 public class Student {
     private String stud_num, name, purpose, college_ID;
