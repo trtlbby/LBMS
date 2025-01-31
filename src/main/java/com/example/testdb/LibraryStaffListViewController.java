@@ -19,9 +19,9 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-/*
-@Author: Earl Lawrence P. Bacsain
-*/
+/**
+ * @Author: Earl Lawrence P. Bacsain
+ **/
 public class LibraryStaffListViewController {
 
     public TextField txtfieldSearch;

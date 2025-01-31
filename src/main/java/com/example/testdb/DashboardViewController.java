@@ -6,6 +6,7 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.Tab;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -19,6 +20,8 @@ public class DashboardViewController {
     public Button btnLibraryCard;
     public Button btnCollegeList;
     public Button btnLibraryStaff;
+    public Tab tabStatistic;
+    public Tab tabMenu;
     Utils utils;
 
     public void initialize(){
@@ -26,7 +29,7 @@ public class DashboardViewController {
     }
 
     public void onClickStudent(ActionEvent actionEvent) throws IOException {
-        utils.currentStage(actionEvent, "StudentListView", "Student Attendance");
+        utils.currentStage(actionEvent, "StudentListView", "Student List");
     }
 
     public void onClickUserManagement(ActionEvent actionEvent) throws IOException {
