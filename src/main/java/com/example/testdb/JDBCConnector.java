@@ -9,7 +9,7 @@ public class JDBCConnector {
     //declaration of variables for mysql connection
     private static final String URL = "jdbc:mysql://localhost:3306/lbms_db";
     private static final String USER = "root";
-    private static final String PASSWORD = "123";
+    private static final String PASSWORD = "SQL#EarlWork092004";
     private static Connection CONN;
 
      protected static Connection connection(){
