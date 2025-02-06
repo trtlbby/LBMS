@@ -11,6 +11,7 @@ target/
 .idea/compiler.xml
 .idea/libraries/
 src/main/java/com/example/testdb/JDBCConnector.java
+
 *.iws
 *.iml
 *.ipr
